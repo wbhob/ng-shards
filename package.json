@@ -1,5 +1,5 @@
 {
-  "name": "angular-library-seed",
+  "name": "ng-shards",
   "version": "0.0.20",
   "description": "Angular library seed",
   "main": "./dist/index.umd.js",
@@ -20,17 +20,17 @@
     "typescript"
   ],
   "author": {
-    "name": "Oleksii Trekhleb",
-    "url": "https://www.linkedin.com/in/trekhleb/"
+    "name": "Wilson Hobbs",
+    "url": "https://www.wilsonhobbs.com/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trekhleb/angular-library-seed.git"
+    "url": "https://github.com/wbhob/ng-shards.git"
   },
   "bugs": {
-    "url": "https://github.com/trekhleb/angular-library-seed/issues"
+    "url": "https://github.com/wbhob/ng-shards/issues"
   },
-  "homepage": "https://github.com/trekhleb/angular-library-seed#readme",
+  "homepage": "https://github.com/wbhob/ng-shards#readme",
   "scripts": {
     "build": "npm run build:esm && npm run build:umd",
     "build:esm": "gulp inline-templates && npm run ngcompile",
@@ -56,7 +56,10 @@
     "test:watch": "karma start --auto-watch --no-single-run",
     "tslint": "tslint"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "shards-ui": "^2.0.0"
+  },
   "peerDependencies": {
     "@angular/common": "^4.0.0",
     "@angular/core": "^4.0.0"

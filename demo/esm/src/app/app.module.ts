@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { ShardsModule } from '../../lib';
 import { AppComponent } from './app.component';
 
-import { TickTockModule } from '../../lib';
-
 @NgModule({
-  imports: [ BrowserModule, TickTockModule ],
+  imports: [ BrowserModule, ShardsModule ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })
