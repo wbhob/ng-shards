@@ -1,19 +1,16 @@
-import { Component, NgZone } from '@angular/core';
+import { Component, NgZone, ViewChild } from '@angular/core';
+
+import { ShardsAlert } from '../../lib';
 
 @Component({
   selector: 'my-app',
   template: `
   <shards-app>
-    <div sh-button-group>
-        <button sh-button [color]="color" [pill]="pill"> Color my World</button>
-        <button sh-button [color]="'secondary'" [pill]="false"> Color my World</button>
-    </div>
+    <sh-badge outline color="danger" squared>13</sh-badge>
 </shards-app>
   `
 })
 export class AppComponent {
-  color = "secondary"
-  pill = false;
 
   constructor(
     private zone: NgZone
@@ -22,13 +19,7 @@ export class AppComponent {
   ngOnInit() {
     this.zone.run(() => {
       setInterval(() => {
-        if (this.pill) {
-          this.color = 'primary';
-          this.pill = false;
-        } else {
-          this.color = 'danger';
-          this.pill = true;
-        }
+
       }, 1000);
     });
   }

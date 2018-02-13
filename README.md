@@ -8,7 +8,7 @@ Here's a table of components already ported, and components yet to be ported.
 
 | Component                            | Status |
 | ------------------------------------ | ------ |
-| Alert                                | ❌      |
+| Alert                                | ✅      |
 | Badge                                | ❌      |
 | Button Group Inputs (radio/checkbox) | ❌      |
 | Button Groups                        | ✅      |

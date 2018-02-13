@@ -14,15 +14,11 @@ export class ShardsButton extends Shard implements OnInit {
     @HostBinding('class.btn') btn = true;
 
     private _outline = false;
-    private _color = 'primary';
-    private _colorStore: string = '';
 
     @Input()
     set color(color: string) {
         if (color) {
-            this._colorStore = this._color;
-            this._color = color;
-            this.setColor();
+            this.setButtonColor(color);
         }
     }
 
@@ -33,7 +29,7 @@ export class ShardsButton extends Shard implements OnInit {
         } else {
             this._outline = false;
         }
-        this.setColor();
+        this.setButtonColor(this._color);
     }
 
     @Input()
@@ -64,16 +60,20 @@ export class ShardsButton extends Shard implements OnInit {
     }
 
     ngOnInit() {
-        this.setColor();
+        if (!this._color) {
+            this.setButtonColor('primary');
+        }
     }
 
-    private setColor() {
+    private setButtonColor(color: string) {
+
         this.setClass('btn-outline-' + this._colorStore, false);
         this.setClass('btn-' + this._colorStore, false);
+
         if (this._outline) {
-            this.setClass('btn-outline-' + this._color, true);
+            this.setColor(color, 'btn-outline-');
         } else {
-            this.setClass('btn-' + this._color, true);
+            this.setColor(color, 'btn-');
         }
     }
 }
